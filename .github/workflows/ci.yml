@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 env:
-  MIX_ENV: dev
+  MIX_ENV: test
 
 jobs:
   test:
@@ -19,6 +19,7 @@ jobs:
       - run: |
           mix deps.get
           mix compile
+          mix esbuild default
 
       - working-directory: playwright/
         run: |

@@ -16,9 +16,11 @@ config :ci_connect_test, CiConnectTest.Repo,
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :ci_connect_test, CiConnectTestWeb.Endpoint,
-  http: [ip: {127, 0, 0, 1}, port: 4002],
+  http: [ip: {127, 0, 0, 1}, port: 4000],
+  check_origin: false,
+  debug_errors: true,
   secret_key_base: "T0MX4k9Byj74ytb2pPvXBljkZgzNiu/Tyy3Wrqh5tLZT5sLfNksPR5CmDO2LnczR",
-  server: false
+  server: true
 
 # In test we don't send emails.
 config :ci_connect_test, CiConnectTest.Mailer, adapter: Swoosh.Adapters.Test
